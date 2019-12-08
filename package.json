@@ -1,6 +1,6 @@
 {
   "name": "rd-mid-webpack4",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -39,6 +39,7 @@
     "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.6.0",
-    "webpack-dev-server": "^3.8.2"
+    "webpack-dev-server": "^3.8.2",
+    "babel-plugin-import": "^1.12.2"
   }
 }
