@@ -1,5 +1,7 @@
 module.exports = {
   plugins: [
-    ["import", { "libraryName": "antd", "style": true }]
+    [
+      "import", { "libraryName": "antd", "style": true }
+    ]
   ]
 }

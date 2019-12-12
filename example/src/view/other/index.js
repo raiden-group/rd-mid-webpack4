@@ -14,7 +14,7 @@ export default class Home extends Component {
     return <div className={styles['other-wrap']}>
       <Button type="primary" onClick={() => {
         this.props.history.push('/home');
-      }}>gohomer</Button>
+      }}>gohomer</Button>12
     </div> 
   }
 }

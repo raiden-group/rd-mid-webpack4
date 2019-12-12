@@ -5,10 +5,12 @@ module.exports = async function(ctx, webpackConfig) {
   const alias = webpackConfig.resolve.alias;
   webpackConfig.resolve.alias = {
     ...alias,
-    img: path.resolve(__dirname, './src/img'),
     components: path.resolve(__dirname, './src/components'),
-    utils: path.resolve(__dirname, './src/utils'),
-    container: path.resolve(__dirname, './src/container')
+    static:path.resolve(__dirname, './src/static'),
+    utils: path.resolve(__dirname, './src/common/utils'),
+    view: path.resolve(__dirname, './src/view'),
+    styles: path.resolve(__dirname, './src/common/styles'),
+    stores: path.resolve(__dirname, './src/stores')
   }
   return webpackConfig;
 }
