@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject} from "mobx-react";
-import { Button, Input } from 'antd';
+import { Button } from 'antd';
 import './index.less';
 import styles from './index.less';
 

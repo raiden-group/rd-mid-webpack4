@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "compression-webpack-plugin": "^3.0.1",
     "rd-mid-server": "0.0.1",
     "rd-mid-webpack4": "0.0.6"
   }

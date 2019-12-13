@@ -17,19 +17,12 @@ module.exports = {
         template: "./src/assets/index.html",
         cssModules: true, // css 模块化时不支持 通过less 方式的主题替换
         devtool: true, // 是否开启调试
+        manifest: false,
         watch: true, //
-        autoOpen: false, // 本地开发是否自动在浏览器中打开
+        autoOpen: true, // 本地开发是否自动在浏览器中打开
         port: 8888, // 本地服务端口
         modifyVars: {  // 配置less 变量，常用于 库主题替换
           'primary-color': '#1DA57A',
-        },
-        externals: {
-          'antd': {
-            root: 'antd',
-            commonjs: 'antd',
-            commonjs2: 'antd',
-            amd: 'antd',
-          }
         }
       }
     ]
@@ -43,10 +36,11 @@ module.exports = {
         output: './build',
         cssModules: true,
         manifest: true,
+        minimize: false,
         template: './src/assets/index.html',
-        // minimize: true, //是否压缩
         common: true,// 是否提取通用引用
-        devtool: true, 
+        devtool: false, 
+        gzip: false,
         analyze: true,  // 启动打包文件分析
         externals: {
           react: {
@@ -61,7 +55,7 @@ module.exports = {
             commonjs2: 'react-dom',
             amd: 'react-dom',
           },
-          '@ant-design': {
+          antd: {
             root: 'antd',
             commonjs: 'antd',
             commonjs2: 'antd',

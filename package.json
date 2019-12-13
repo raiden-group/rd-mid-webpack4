@@ -1,6 +1,6 @@
 {
   "name": "rd-mid-webpack4",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "compression-webpack-plugin": "^3.0.1",
     "happypack": "^5.0.1"
   }
 }
