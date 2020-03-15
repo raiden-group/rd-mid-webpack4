@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject} from "mobx-react";
 import { Button, Input } from 'antd';
+import { Link } from 'react-router-dom';
 import './index.less';
 import styles from './index.less';
 
@@ -16,11 +17,8 @@ export default class Home extends Component {
       <Input value={name} onChange={(e) => {
         this.Store.setName(e.target.value)
       }}/>
-      1111111
       <Button type="primary">{name}</Button>
-      <Button type="primary" onClick={() => {
-        this.props.history.push('/other');
-      }}>goother</Button>
+      <Link to="/home/my" >我的</Link>
     </div> 
   }
 }

@@ -10,7 +10,8 @@ module.exports = async function(ctx, webpackConfig) {
     utils: path.resolve(__dirname, './src/common/utils'),
     view: path.resolve(__dirname, './src/view'),
     styles: path.resolve(__dirname, './src/common/styles'),
-    stores: path.resolve(__dirname, './src/stores')
+    stores: path.resolve(__dirname, './src/stores'),
+    services: path.resolve(__dirname, './src/services')
   }
   return webpackConfig;
 }

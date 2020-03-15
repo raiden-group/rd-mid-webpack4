@@ -3,8 +3,20 @@ module.exports = {
     [
       'server',
       {
-        port: 2000,
-        root: './build'
+        __path__: '../../rd-mid-server/express.js',
+        root: './build',
+        open: false,
+        // historyApiFallback: true
+        historyApiFallback : {
+          rewrites: [
+            { 
+              from: /^\/(app1|app2)\.html/g, to: (c) => {
+                // console.log(11111, c.parsedUrl);
+                return '/app1.html'
+              }
+            }
+          ]
+        }
       }
     ]
   ],
@@ -13,16 +25,38 @@ module.exports = {
       'webpack4',
       {
         __path__: '../lib/index.js',
-        entry: "./src/index.js",
+        entry:{
+          app1:  "./src/index.js",
+          app2: "./src/index2.js"
+        },
+        // entry: "./src/index.js",
         template: "./src/assets/index.html",
         cssModules: true, // css 模块化时不支持 通过less 方式的主题替换
         devtool: true, // 是否开启调试
-        manifest: false,
         watch: true, //
+        common: true,
         autoOpen: true, // 本地开发是否自动在浏览器中打开
         port: 8888, // 本地服务端口
         modifyVars: {  // 配置less 变量，常用于 库主题替换
           'primary-color': '#1DA57A',
+        },
+        output: './build',
+        devServer: {
+          // historyApiFallback:{
+          //   rewrites: [
+          //     { 
+          //       from: /^\/(app1|app2)\.html/g, to: ({match}) => {
+          //         return match[0];
+          //       }
+          //     },
+          //     { 
+          //       from: '/', to: () => {
+          //         console.log(11111);
+          //         return '/app1.html';
+          //       }
+          //     },
+          //   ]
+          // }
         }
       }
     ]
@@ -32,36 +66,16 @@ module.exports = {
       'webpack4',
       {
         __path__: '../lib/index.js',
+        // entry:{
+        //   app1:  "./src/index.js",
+        //   app2: "./src/index2.js"
+        // },
         entry: "./src/index.js",
         output: './build',
-        cssModules: true,
-        manifest: true,
-        minimize: false,
         template: './src/assets/index.html',
-        common: true,// 是否提取通用引用
-        devtool: false, 
-        gzip: false,
-        analyze: true,  // 启动打包文件分析
-        externals: {
-          react: {
-            root: 'React',
-            commonjs: 'react',
-            commonjs2: 'react',
-            amd: 'react',
-          },
-          'react-dom': {
-            root: 'ReactDom',
-            commonjs: 'react-dom',
-            commonjs2: 'react-dom',
-            amd: 'react-dom',
-          },
-          antd: {
-            root: 'antd',
-            commonjs: 'antd',
-            commonjs2: 'antd',
-            amd: 'antd',
-          }
-        },
+        common: false,
+        cssModules: true,
+        analyze: false,  // 启动打包文件分析
         folders: {
           css: 'css',
           js: 'js',
