@@ -26,11 +26,11 @@ module.exports = {
       "webpack4",
       {
         __path__: "../lib/index.js",
-        entry: {
-          app1: "./src/index.js",
-          app2: "./src/index2.js",
-        },
-        // entry: "./src/index.js",
+        // entry: {
+        //   app1: "./src/index.js",
+        //   app2: "./src/index2.js",
+        // },
+        entry: "./src/index.js",
         template: "./src/assets/index.html",
         cssModules: true, // css 模块化时不支持 通过less 方式的主题替换
         devtool: "inline-source-map", // 是否开启调试
